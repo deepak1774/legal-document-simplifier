@@ -121,4 +121,4 @@ This project is open-source and available under the [MIT License](LICENSE).
 
 ---
 
-> Built with ❤️ by [deepak1774](https://github.com/deepak1774)
+> Built by [deepak1774](https://github.com/deepak1774)
