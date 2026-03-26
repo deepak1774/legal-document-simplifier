@@ -1,7 +1,7 @@
-from fastapi import FastAPI, UploadFile, File
-from fastapi.middleware.cors import CORSMiddleware
-from extractor import extract_text
-from simplifier import simplify_text, detect_risks
+from fastapi import FastAPI, UploadFile, File  # type: ignore
+from fastapi.middleware.cors import CORSMiddleware  # type: ignore
+from extractor import extract_text  # type: ignore
+from simplifier import simplify_text, detect_risks  # type: ignore
 
 app = FastAPI()
 
@@ -17,7 +17,7 @@ async def upload(file: UploadFile = File(...)):
     contents = await file.read()
     raw_text = extract_text(contents)
     simplified = simplify_text(raw_text)
-    risks = detect_risks(simplified)
+    risks = detect_risks(raw_text)
     return {
         "original_text": raw_text,
         "simplified_text": simplified,

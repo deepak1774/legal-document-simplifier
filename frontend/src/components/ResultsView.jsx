@@ -21,7 +21,7 @@ const formatSimplified = (text) => {
           <span style={{ color: 'var(--accent-primary)', fontWeight: '700', flexShrink: 0, marginTop: '2px' }}>•</span>
           <span style={{ lineHeight: '1.6', color: 'var(--text-primary)', flex: 1 }}>
             {pageNum && (
-              <span style={{ display: 'inline-block', background: '#eff6ff', color: 'var(--accent-primary)', fontSize: '0.7rem', fontWeight: '700', padding: '0.1rem 0.45rem', borderRadius: '4px', marginRight: '0.5rem', border: '1px solid #bfdbfe', verticalAlign: 'middle', whiteSpace: 'nowrap' }}>
+              <span style={{ display: 'inline-block', background: 'rgba(59, 130, 246, 0.15)', color: 'var(--accent-primary)', fontSize: '0.7rem', fontWeight: '700', padding: '0.1rem 0.45rem', borderRadius: '4px', marginRight: '0.5rem', border: '1px solid #1e40af', verticalAlign: 'middle', whiteSpace: 'nowrap' }}>
                 Pg. {pageNum}
               </span>
             )}
@@ -44,7 +44,7 @@ const ResultsView = ({ originalText, simplifiedText }) => {
           onClick={() => setSplitView(!splitView)}
           style={{
             padding: '0.5rem 1rem',
-            background: 'white',
+            background: 'var(--card-bg)',
             border: '1px solid var(--border-color)',
             borderRadius: '6px',
             fontSize: '0.875rem',

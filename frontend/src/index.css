@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg-color: #f9fafb;
-  --text-primary: #111827;
-  --text-secondary: #4b5563;
-  --accent-primary: #2563eb;
-  --accent-hover: #1d4ed8;
-  --border-color: #e5e7eb;
-  --card-bg: #ffffff;
+  --bg-color: #050505;
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --accent-primary: #3b82f6;
+  --accent-hover: #60a5fa;
+  --border-color: #1e293b;
+  --card-bg: #0f172a;
   
   --risk-high: #ef4444;
   --risk-medium: #f59e0b;
   --risk-low: #3b82f6;
   
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 * {
@@ -82,9 +82,9 @@ h1, h2, h3, h4 {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #334155;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #475569;
 }

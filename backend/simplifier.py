@@ -174,19 +174,19 @@ def _simplify_sentence(text: str) -> str:
         text = re.sub(pattern, replacement, text, flags=re.IGNORECASE)
     # Capitalize first letter
     if text:
-        text = text[0].upper() + text[1:]
+        text = text[0].upper() + text[1:]  # type: ignore
     return text.strip()
 
 
 def _score_sentence(sentence: str) -> int:
     """Score a sentence by legal importance."""
     lower = sentence.lower()
-    score = 0
+    score: int = 0
     for keyword in LEGAL_IMPORTANCE:
         if keyword in lower:
-            score += 10
+            score = score + 10  # type: ignore
     words = [w for w in re.findall(r'\w+', lower) if w not in STOP_WORDS]
-    score += len(words)  # Longer sentences have more substance
+    score = score + len(words)  # type: ignore
     return score
 
 
@@ -202,7 +202,7 @@ def _extract_and_simplify(page_text: str, top_n: int = 5) -> list:
     # Score and pick top N
     scored = [(s, _score_sentence(s)) for s in raw_sentences]
     scored.sort(key=lambda x: x[1], reverse=True)
-    top = [s for s, _ in scored[:top_n]]
+    top = [s for s, _ in scored[:top_n]]  # type: ignore
 
     # Preserve reading order
     ordered = [s for s in raw_sentences if s in set(top)]
@@ -213,7 +213,7 @@ def _extract_and_simplify(page_text: str, top_n: int = 5) -> list:
         clean = _simplify_sentence(s)
         words = clean.split()
         if len(words) > 20:
-            clean = ' '.join(words[:20]).rstrip(',;:') + '.'
+            clean = ' '.join(words[:20]).rstrip(',;:') + '.'  # type: ignore
         simplified.append(clean)
     return simplified
 
@@ -254,7 +254,7 @@ def simplify_text(text: str) -> str:
     scored.sort(key=lambda x: x[2], reverse=True)
 
     # Pick top 25, sorted back into document order (by page)
-    top = scored[:25]
+    top = scored[:25]  # type: ignore
     top.sort(key=lambda x: x[1])  # sort by page number for reading order
 
     bullets = []
@@ -262,7 +262,7 @@ def simplify_text(text: str) -> str:
         simplified = _simplify_sentence(s)
         words = simplified.split()
         if len(words) > 20:
-            simplified = ' '.join(words[:20]).rstrip(',;:') + '.'
+            simplified = ' '.join(words[:20]).rstrip(',;:') + '.'  # type: ignore
         bullets.append(f"• [Pg. {pn}] {simplified}")
 
     return "\n".join(bullets)
@@ -274,7 +274,7 @@ def detect_risks(text: str) -> list:
     for keyword, severity in RISK_KEYWORDS.items():
         if keyword in lower:
             idx = lower.find(keyword)
-            excerpt = text[max(0, idx - 100):idx + 200]
+            excerpt = text[max(0, idx - 100):idx + 200]  # type: ignore
             risks.append({
                 "type": keyword,
                 "severity": severity,

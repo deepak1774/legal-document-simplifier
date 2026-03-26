@@ -1,4 +1,4 @@
-import pymupdf
+import pymupdf  # type: ignore
 
 def extract_text(pdf_bytes: bytes) -> str:
     doc = pymupdf.Document(stream=pdf_bytes, filetype="pdf")

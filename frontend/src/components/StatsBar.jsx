@@ -6,7 +6,7 @@ const StatsBar = ({ stats }) => {
   const statItems = [
     { label: 'Pages Analyzed', value: stats.pages },
     { label: 'Clauses Found', value: stats.clauses_found },
-    { label: 'Risks Flagged', value: stats.risk_items, color: '#ef4444' },
+    { label: 'Risks Flagged', value: stats.risk_items, color: 'var(--risk-high)' },
     { label: 'Time Saved (est)', value: stats.reading_time_saved }
   ];
 

@@ -1,4 +1,4 @@
-from fpdf import FPDF
+from fpdf import FPDF  # type: ignore
 pdf = FPDF()
 pdf.add_page()
 pdf.set_font("Arial", size=15)

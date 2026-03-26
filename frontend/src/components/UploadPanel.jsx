@@ -24,7 +24,7 @@ const UploadPanel = ({ onUpload }) => {
           padding: '3rem 2rem',
           border: `2px dashed ${isDragActive ? 'var(--accent-primary)' : 'var(--border-color)'}`,
           borderRadius: '8px',
-          background: isDragActive ? 'rgba(37, 99, 235, 0.05)' : '#fafafa',
+          background: isDragActive ? 'rgba(59, 130, 246, 0.1)' : 'var(--bg-color)',
           cursor: 'pointer',
           marginBottom: '1.5rem',
           transition: 'all 0.2s'
